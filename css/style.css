@@ -60,11 +60,23 @@ h1 {
     line-height: 1.5; /* межстрочный интервал */
 }
 
-.main td > a {
+.main td > a:link { /* Порядок: 1. link стили для не посещенных ссылок */
     text-decoration: none; /* убирает подчеркивание у ссылок */
     font-weight: 700; /* полужирный шрифт */
     text-transform: uppercase;
-    color: #214e34;
+    color: #0a5021;
     padding-left: 15px;
     letter-spacing: 2px; /* расстояние между буквами */
+}
+
+.main td > a:visited { /* Порядок 2. visited стили для посещенных ссылок */
+    color: violet;
+}
+
+.main td > a:hover { /* Порядок 3. hover стили для ссылок при наведении курсора мыши */
+    color: red;
+}
+
+.main td > a:active { /* Порядок 4. active  стили для активной ссылки (при клике) */
+    color: yellow;
 }
