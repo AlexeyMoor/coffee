@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* { /* универсальный селектор обнуляет все margin везде */
+    margin: 0;
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    /* легкий цвет кофе */
+    background-color: #f3e9dc;
+}
+
+.header {
+    height: 500px;
+    background-image: url("../images/coffee-bgnd.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*padding: 1px;*/
+    /*border-top: 1px solid transparent;*/
+    padding-top: 149px;
+    box-sizing: border-box; /* включает в себя общую ширину и высоту элемента, padding и border */
+}
+
+h1 {
+    font-size: 150px;
+    font-family: "Covered By Your Grace", cursive;
+    color: rgba(98, 42, 15, 0.85);
+    text-shadow: 3px 3px 5px rgba(255, 255, 255, 0.85);
+    text-align: center;
+    /*padding-top: 149px;*/
+    /*margin-top: 148px;*/
+}
+
+.main > ul { /* знак > означает что ul является прямым потомком main */
+    list-style: none; /* убирает маркеры у списка */
+    padding: 0;
+    position: relative; /* создает контекст позиционирования для дочерних элементов */
+}
+
+.main li { /* пробел между .main и li - является вложенность всех элементов внутри main */
+    margin: 100px 0;
+    border-bottom: 2px solid #622A0FD8;
+    padding-bottom: 100px;
+}
+
+.main li > h2 {
+    font-weight: 800; /* очень жирный шрифт */
+    font-size: 28px; /* размер шрифта */
+    text-align: center; /* выравнивание по центру */
+    background-color: rgba(98, 42, 15, 0.45);
+    text-transform: uppercase; /* все буквы заглавные */
+    position: absolute; /* выпадает из потока, относительно родителя main */
+    left: 0;
+}
+
+.main li > p {
+    font-size: 20px;
+    color: #454; /* = #445544 темно-серый цвет */
+    text-align: justify; /* выравнивание по ширине */
+    padding: 0 15px; /* отступ слева и справа */
+    text-indent: 30px; /* отступ первой строки абзаца */
+    line-height: 1.5; /* межстрочный интервал */
+    position: absolute;
+    left: 10%;
+}
+
+.main li > a {
+    text-decoration: none; /* убирает подчеркивание у ссылок */
+    font-weight: 700; /* полужирный шрифт */
+    text-transform: uppercase;
+    color: #214e34;
+    padding-left: 15px;
+    letter-spacing: 2px; /* расстояние между буквами */
+    position: absolute;
+    left: 10%;
+}
