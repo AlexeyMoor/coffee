@@ -33,19 +33,17 @@ h1 {
     /*margin-top: 148px;*/
 }
 
-.main > ul { /* знак > означает что ul является прямым потомком main */
-    list-style: none; /* убирает маркеры у списка */
+.main > table { /* знак > означает что table является прямым потомком main */
     padding: 0;
-    position: relative; /* создает контекст позиционирования для дочерних элементов */
 }
 
-.main li { /* пробел между .main и li - является: вложенность всех элементов внутри main */
+.main td { /* пробел между .main и td - является: вложенность всех элементов внутри main */
     margin: 100px 0;
     border-bottom: 2px solid #622A0FD8;
     padding-bottom: 100px;
 }
 
-.main li > h2 {
+.main td > h2 {
     font-weight: 800; /* очень жирный шрифт */
     font-size: 28px; /* размер шрифта */
     text-align: center; /* выравнивание по центру */
@@ -53,7 +51,7 @@ h1 {
     text-transform: uppercase; /* все буквы заглавные */
 }
 
-.main li > p {
+.main td > p {
     font-size: 20px;
     color: #454; /* = #445544 темно-серый цвет */
     text-align: justify; /* выравнивание по ширине */
@@ -62,7 +60,7 @@ h1 {
     line-height: 1.5; /* межстрочный интервал */
 }
 
-.main li > a {
+.main td > a {
     text-decoration: none; /* убирает подчеркивание у ссылок */
     font-weight: 700; /* полужирный шрифт */
     text-transform: uppercase;
