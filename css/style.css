@@ -1,100 +1,100 @@
 @import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 * { /* универсальный селектор обнуляет все margin везде */
-    margin: 0;
+  margin: 0;
 }
 
 body {
-    font-family: "Raleway", sans-serif;
-    font-weight: 500;
-    /* легкий цвет кофе */
-    background-color: #f3e9dc;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  /* легкий цвет кофе */
+  background-color: #f3e9dc;
 }
 
 .header {
-    height: 500px;
-    background-image: url("../images/coffee-bgnd.jpeg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /*padding: 1px;*/
-    /*border-top: 1px solid transparent;*/
-    padding-top: 149px;
-    box-sizing: border-box; /* включает в себя общую ширину и высоту элемента, padding и border */
+  height: 500px;
+  background-image: url("../images/coffee-bgnd.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*padding: 1px;*/
+  /*border-top: 1px solid transparent;*/
+  padding-top: 149px;
+  box-sizing: border-box; /* включает в себя общую ширину и высоту элемента, padding и border */
 }
 
 h1 {
-    font-size: 150px;
-    font-family: "Covered By Your Grace", cursive;
-    color: rgba(98, 42, 15, 0.85);
-    text-shadow: 3px 3px 5px rgba(255, 255, 255, 0.85);
-    text-align: center;
-    /*padding-top: 149px;*/
-    /*margin-top: 148px;*/
+  font-size: 150px;
+  font-family: "Covered By Your Grace", cursive;
+  color: rgba(98, 42, 15, 0.85);
+  text-shadow: 3px 3px 5px rgba(255, 255, 255, 0.85);
+  text-align: center;
+  /*padding-top: 149px;*/
+  /*margin-top: 148px;*/
 }
 
 .main ul { /* пробел между .main и ul - является: вложенность всех элементов ul внутри main */
-    list-style: none; /* убирает маркеры у списка */
-    padding: 0;
-    width: 100%;
-    position: relative; /* создает контекст позиционирования для дочерних элементов */
+  list-style: none; /* убирает маркеры у списка */
+  padding: 0;
+  width: 100%;
+  position: relative; /* создает контекст позиционирования для дочерних элементов */
 }
 
 .main li { /* пробел между .main и li - является: вложенность всех элементов li внутри main */
-    border-bottom: 3px solid #622A0FD8;
-    margin: 3px;
-    padding-bottom: 50px;
+  border-bottom: 3px solid #622A0FD8;
+  margin: 3px;
+  padding-bottom: 50px;
 }
 
 .main li > h2 {
-    font-weight: 800; /* очень жирный шрифт */
-    font-size: 28px; /* размер шрифта */
-    text-align: center; /* выравнивание по центру */
-    background-color: rgba(98, 42, 15, 0.45);
-    text-transform: uppercase; /* все буквы заглавные */
-    border-radius: 8px; /* скругление углов */
+  font-weight: 800; /* очень жирный шрифт */
+  font-size: 28px; /* размер шрифта */
+  text-align: center; /* выравнивание по центру */
+  background-color: rgba(98, 42, 15, 0.45);
+  text-transform: uppercase; /* все буквы заглавные */
+  border-radius: 8px; /* скругление углов */
 }
 
 .main li > p {
-    font-size: 20px;
-    color: #454; /* = #445544 темно-серый цвет */
-    text-align: justify; /* выравнивание по ширине */
-    padding: 0 15px; /* отступ слева и справа */
-    text-indent: 30px; /* отступ первой строки абзаца */
-    line-height: 1.5; /* межстрочный интервал */
+  font-size: 20px;
+  color: #454; /* = #445544 темно-серый цвет */
+  text-align: justify; /* выравнивание по ширине */
+  padding: 0 15px; /* отступ слева и справа */
+  text-indent: 30px; /* отступ первой строки абзаца */
+  line-height: 1.5; /* межстрочный интервал */
 }
 
 /* Общие стили для левой и правой колонок */
 .column-left, .column-right { /* объединение селекторов */
-    position: absolute; /* выпадает из потока, относительно родителя main */
-    width: 50%;
+  position: absolute; /* выпадает из потока, относительно родителя main */
+  width: 50%;
 }
 
 .column-left {
-    left: 0;
+  left: 0;
 }
 
 .column-right {
-    right: 0;
+  right: 0;
 }
 
 .main li > a:link { /* Порядок: 1. link стили для не посещенных ссылок */
-    text-decoration: none; /* убирает подчеркивание у ссылок */
-    font-weight: 700; /* полужирный шрифт */
-    text-transform: uppercase;
-    color: #2b2014;
-    padding-left: 15px;
-    letter-spacing: 2px; /* расстояние между буквами */
+  text-decoration: none; /* убирает подчеркивание у ссылок */
+  font-weight: 700; /* полужирный шрифт */
+  text-transform: uppercase;
+  color: #2b2014;
+  padding-left: 15px;
+  letter-spacing: 2px; /* расстояние между буквами */
 }
 
 .main li > a:visited { /* Порядок 2. visited стили для посещенных ссылок */
-    color: violet;
+  color: violet;
 }
 
 .main li > a:hover { /* Порядок 3. hover стили для ссылок при наведении курсора мыши */
-    color: red;
+  color: red;
 }
 
 .main li > a:active { /* Порядок 4. active  стили для активной ссылки (при клике) */
-    color: yellow;
+  color: yellow;
 }
