@@ -14,48 +14,87 @@ body {
 .header {
   height: 500px;
   background-image: url("../images/coffee-bgnd.jpeg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-position: center; /* центрирует фон */
+  background-repeat: no-repeat; /* не повторять фон */
+  background-size: cover; /* масштабирует фон по размеру блока */
   /*padding: 1px;*/
   /*border-top: 1px solid transparent;*/
   padding-top: 149px;
   box-sizing: border-box; /* включает в себя общую ширину и высоту элемента, padding и border */
 }
 
-h1 {
+h1 { /* Заголовок внутри header */
   font-size: 150px;
   font-family: "Covered By Your Grace", cursive;
   color: rgba(98, 42, 15, 0.85);
   text-shadow: 3px 3px 5px rgba(255, 255, 255, 0.85);
-  text-align: center;
+  text-align: center; /* выравнивание текста по центру */
   /*padding-top: 149px;*/
   /*margin-top: 148px;*/
 }
 
 .main ul { /* пробел между .main и ul - является: вложенность всех элементов ul внутри main */
   list-style: none; /* убирает маркеры у списка */
-  padding: 0;
+  /*
+  создает контекст позиционирования для дочерних элементов
+  (родитель - relative)
+  (дочерние - absolute)
+  */
   width: 100%;
-  position: relative; /* создает контекст позиционирования для дочерних элементов */
+  box-sizing: border-box;
+  position: relative; /* чтобы li позиционировались относительно ul */
 }
 
 .main li { /* пробел между .main и li - является: вложенность всех элементов li внутри main */
   border-bottom: 3px solid #622A0FD8;
-  margin: 3px;
-  padding-bottom: 50px;
+  border-radius: 20px; /* скругление углов у разделительных линий */
+  width: 49.3%;
+  height: 210px;
+  box-sizing: border-box;
+  position: absolute; /* выпадает из потока, относительно родителя main */
 }
 
-.main li > h2 {
+/* Позиционирование по вертикали для каждого элемента списка */
+.main li:nth-child(1) { /* Brazil - первый элемент списка */
+  top: 10px;
+  left: 10px;
+}
+
+.main li:nth-child(2) { /* Colombia - второй элемент списка */
+  top: 230px;
+  left: 10px;
+}
+
+.main li:nth-child(3) { /* India - третий элемент списка */
+  top: 450px;
+  left: 10px;
+}
+
+.main li:nth-child(4) { /* Ethiopia - четвертый элемент списка */
+  top: 10px;
+  right: 10px;
+}
+
+.main li:nth-child(5) { /* Costa Rica - пятый элемент списка */
+  top: 230px;
+  right: 10px;
+}
+
+.main li:nth-child(6) { /* Kenya - шестой элемент списка */
+  top: 450px;
+  right: 10px;
+}
+
+.main li > h2 { /* h2 - Заголовки внутри li */
   font-weight: 800; /* очень жирный шрифт */
   font-size: 28px; /* размер шрифта */
   text-align: center; /* выравнивание по центру */
   background-color: rgba(98, 42, 15, 0.45);
   text-transform: uppercase; /* все буквы заглавные */
-  border-radius: 8px; /* скругление углов */
+  border-radius: 10px; /* скругление углов у фона заголовков стран */
 }
 
-.main li > p {
+.main li > p { /* p - Параграфы внутри li */
   font-size: 20px;
   color: #454; /* = #445544 темно-серый цвет */
   text-align: justify; /* выравнивание по ширине */
@@ -64,37 +103,29 @@ h1 {
   line-height: 1.5; /* межстрочный интервал */
 }
 
-/* Общие стили для левой и правой колонок */
-.column-left, .column-right { /* объединение селекторов */
-  position: absolute; /* выпадает из потока, относительно родителя main */
-  width: 50%;
-}
-
-.column-left {
-  left: 0;
-}
-
-.column-right {
-  right: 0;
-}
-
+/* Стили для ССЫЛОК внутри li */
 .main li > a:link { /* Порядок: 1. link стили для не посещенных ссылок */
   text-decoration: none; /* убирает подчеркивание у ссылок */
   font-weight: 700; /* полужирный шрифт */
   text-transform: uppercase;
-  color: #2b2014;
+  color: brown;
+  transition: color 0.3s, transform 0.3s;
+  display: inline-block; /* чтобы padding работал корректно */
   padding-left: 15px;
+  line-height: 1.5; /* межстрочный интервал */
   letter-spacing: 2px; /* расстояние между буквами */
 }
 
 .main li > a:visited { /* Порядок 2. visited стили для посещенных ссылок */
-  color: violet;
+  color: #009c2d;
 }
 
 .main li > a:hover { /* Порядок 3. hover стили для ссылок при наведении курсора мыши */
-  color: red;
+  color: #ffb700;
+  transform: scale(1.02); /* увеличивает размер ссылки на 20% */
+
 }
 
 .main li > a:active { /* Порядок 4. active  стили для активной ссылки (при клике) */
-  color: yellow;
+  transform: scale(0.98); /* уменьшает размер ссылки на 2% */
 }
