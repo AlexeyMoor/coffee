@@ -1,131 +1,75 @@
-@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Raleway:wght@400;500;700;800&display=swap');
 
-* { /* универсальный селектор обнуляет все margin везде */
-  margin: 0;
+:root {
+  --coffee-bg: #f3e9dc;
+  --coffee-primary: rgba(98, 42, 15, 0.85);
+  --coffee-light: rgba(98, 42, 15, 0.45);
+  --coffee-hover: rgba(255, 224, 195, 0.9);
+  --coffee-visited: rgb(55, 149, 68);
+  --coffee-text: #2b2014;
 }
 
 body {
   font-family: "Raleway", sans-serif;
-  font-weight: 500;
-  /* легкий цвет кофе */
-  background-color: #f3e9dc;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.3)
+  ),
+  url("../images/tapeta-rozsypane-ziarna-kawy-z-listkiem-na-deskach.jpg") center / cover fixed no-repeat;
 }
 
-.header {
-  height: 500px;
-  background-image: url("../images/coffee-bgnd.jpeg");
-  background-position: center; /* центрирует фон */
-  background-repeat: no-repeat; /* не повторять фон */
-  background-size: cover; /* масштабирует фон по размеру блока */
-  /*padding: 1px;*/
-  /*border-top: 1px solid transparent;*/
-  padding-top: 149px;
-  box-sizing: border-box; /* включает в себя общую ширину и высоту элемента, padding и border */
+.coffee-header {
+  min-height: 30rem;
+  background: url("../images/coffee-bgnd.jpeg") no-repeat center/cover;
 }
 
-h1 { /* Заголовок внутри header */
-  font-size: 150px;
+.coffee-title {
   font-family: "Covered By Your Grace", cursive;
-  color: rgba(98, 42, 15, 0.85);
+  font-size: clamp(5rem, 15vw, 10rem); /* Адаптивный размер шрифта. vw - относительно окна браузера.*/
+  color: var(--coffee-primary);
   text-shadow: 3px 3px 5px rgba(255, 255, 255, 0.85);
-  text-align: center; /* выравнивание текста по центру */
-  /*padding-top: 149px;*/
-  /*margin-top: 148px;*/
 }
 
-.main ul { /* пробел между .main и ul - является: вложенность всех элементов ul внутри main */
-  list-style: none; /* убирает маркеры у списка */
-  /*
-  создает контекст позиционирования для дочерних элементов
-  (родитель - relative)
-  (дочерние - absolute)
-  */
+.coffee-card {
+  background-color: rgba(255, 213, 169, 0.91);
+  transition: transform 0.25s ease, box-shadow 0.25s ease; /* Плавный переход при наведении курсора мыши */
+  border-radius: 0.9rem;
+  max-width: 100%;
   width: 100%;
-  box-sizing: border-box;
-  position: relative; /* чтобы li позиционировались относительно ul */
 }
 
-.main li { /* пробел между .main и li - является: вложенность всех элементов li внутри main */
-  border-bottom: 3px solid #622A0FD8;
-  border-radius: 20px; /* скругление углов у разделительных линий */
-  width: 49.3%;
-  height: 210px;
-  box-sizing: border-box;
-  position: absolute; /* выпадает из потока, относительно родителя main */
+.border-coffee {
+  border: 2px solid var(--coffee-primary);
 }
 
-/* Позиционирование для каждого элемента списка */
-.main li:nth-child(1) { /* Brazil - первый элемент списка */
-  top: 10px;
-  left: 10px;
+.bg-coffee-light {
+  background-color: var(--coffee-light);
 }
 
-.main li:nth-child(2) { /* Colombia - второй элемент списка */
-  top: 230px;
-  left: 10px;
+.coffee-card:hover {
+  transform: translateY(-5px); /* Поднятие карточки при наведении курсора мыши */
+  box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.25);
 }
 
-.main li:nth-child(3) { /* India - третий элемент списка */
-  top: 450px;
-  left: 10px;
+.coffee-link { /* Ссылки */
+  color: var(--coffee-text);
+  background-color: rgba(98, 42, 15, 0.1);
+  padding: 2px 4px;
+  border-radius: 1rem;
 }
 
-.main li:nth-child(4) { /* Ethiopia - четвертый элемент списка */
-  top: 10px;
-  right: 10px;
+.coffee-link:hover { /* При наведении курсора мыши */
+  color: var(--coffee-hover);
 }
 
-.main li:nth-child(5) { /* Costa Rica - пятый элемент списка */
-  top: 230px;
-  right: 10px;
+.coffee-link:visited { /* После посещения ссылки */
+  color: var(--coffee-visited);
 }
 
-.main li:nth-child(6) { /* Kenya - шестой элемент списка */
-  top: 450px;
-  right: 10px;
-}
-
-.main li > h2 { /* h2 - Заголовки внутри li */
-  font-weight: 800; /* очень жирный шрифт */
-  font-size: 28px; /* размер шрифта */
-  text-align: center; /* выравнивание по центру */
-  background-color: rgba(98, 42, 15, 0.45);
-  text-transform: uppercase; /* все буквы заглавные */
-  border-radius: 10px; /* скругление углов у фона заголовков стран */
-}
-
-.main li > p { /* p - Параграфы внутри li */
-  font-size: 20px;
-  color: #454; /* = #445544 темно-серый цвет */
-  text-align: justify; /* выравнивание по ширине */
-  padding: 0 15px; /* отступ слева и справа */
-  text-indent: 30px; /* отступ первой строки абзаца */
-  line-height: 1.5; /* межстрочный интервал */
-}
-
-/* Стили для ССЫЛОК внутри li */
-.main li > a:link { /* Порядок: 1. link стили для не посещенных ссылок */
-  text-decoration: none; /* убирает подчеркивание у ссылок */
-  font-weight: 700; /* полужирный шрифт */
-  text-transform: uppercase;
-  color: brown;
-  transition: color 0.3s, transform 0.3s;
-  display: inline-block; /* чтобы padding работал корректно */
-  padding-left: 15px;
-  line-height: 1.5; /* межстрочный интервал */
-  letter-spacing: 2px; /* расстояние между буквами */
-}
-
-.main li > a:visited { /* Порядок 2. visited стили для посещенных ссылок */
-  color: #009c2d;
-}
-
-.main li > a:hover { /* Порядок 3. hover стили для ссылок при наведении курсора мыши */
-  color: #ffb700;
-  transform: scale(1.02); /* увеличивает размер ссылки на 20% */
-
-}
-
-.main li > a:active { /* Порядок 4. active  стили для активной ссылки (при клике) */
-  transform: scale(0.98); /* уменьшает размер ссылки на 2% */
+.card-text {
+  font-size: clamp(0.95rem, 0.8rem + 0.5vw, 1.1rem);
+  line-height: 1.45; /* Межстрочный интервал */
+  text-align: justify; /* Выравнивание по ширине */
+  text-indent: 30px;
+  color: var(--coffee-text);
 }
