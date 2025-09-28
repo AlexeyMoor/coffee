@@ -4,7 +4,7 @@
   --coffee-bg: #f3e9dc;
   --coffee-primary: rgba(98, 42, 15, 0.85);
   --coffee-light: rgba(98, 42, 15, 0.45);
-  --coffee-hover: rgba(255, 224, 195, 0.9);
+  --coffee-hover: rgb(255, 142, 94);
   --coffee-visited: rgb(55, 149, 68);
   --coffee-text: #2b2014;
 }
